@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@200;300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --black: #1b2730;
+  --white: #ffffff;
+  --grey: #b8bdc0;
+  --pink: #ff50b9;
+  --purple: #a56eff;
+  --blue: #2ad3fe;
+  --horizontal-padding: 4rem;
+  --siders-width: 4rem;
+  --mono-font: "Fira Code", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  font-size: 1.4rem;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.page {
+  position: relative;
+  padding: var(--horizontal-padding) 5rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  font-family: var(--mono-font);
+}
+
+.navbar ol {
+  list-style: none;
+  display: flex;
+  gap: 2.5em;
+}
+
+.navbar li {
+  counter-increment: item;
+}
+
+.navbar li a::before {
+  color: var(--blue);
+  content: "0" counter(item) ".";
+  margin-right: 0.4em;
+}
+
+.navbar a,
+.contact a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.navbar a:hover,
+.contact a:hover {
+  color: var(--pink);
+  transition: color 0.2s ease-in-out;
+}
+
+.social,
+.contact {
+  position: fixed;
+  bottom: 0;
+  width: var(--siders-width);
+  padding: 1rem 0 0;
+}
+
+.social {
+  left: var(--horizontal-padding);
+}
+
+.social ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  list-style: none;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  right: var(--horizontal-padding);
+}
+
+.email {
+  font-family: var(--mono-font);
+  font-weight: 200;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  margin-bottom: 1.5em;
+}
+
+.social-icon {
+  fill: var(--white);
+}
+
+.social li:hover .social-icon,
+.email:hover {
+  fill: var(--pink);
+  /* filter: drop-shadow(0 0 11px rgb(255 255 255 / 0.4)); */
+  transform: translateY(-0.3rem);
+  transition: all 0.3s ease-in-out;
+}
+
+.social-github {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.social-linkedin {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.social ul::after,
+.contact::after {
+  content: "";
+  width: 0.07rem;
+  height: 150px;
+  background-color: var(--white);
+}
+
+.content {
+  padding: 0 calc(6rem + var(--siders-width));
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 90vh;
+}
+
+.sub-heading {
+  font-size: 1.8rem;
+  font-family: var(--mono-font);
+  margin-bottom: 2rem;
+  color: var(--blue);
+  /* padding: 5vh; */
+}
+
+.heading,
+.heading-caption {
+  font-size: 6.4rem;
+  font-weight: 700;
+}
+
+.heading {
+  margin-bottom: 0;
+}
+
+.heading-caption {
+  color: var(--purple);
+  margin-bottom: 3rem;
+}
+
+.intro {
+  max-width: 60rem;
+  font-size: 1.7rem;
+  color: var(--grey);
+  line-height: 1.5;
+  margin-bottom: 4rem;
+}
+
+.blue-text {
+  color: var(--blue);
+}
+
+.pink-text {
+  color: var(--pink);
+}
+
+.purple-text {
+  color: var(--purple);
+}
+
+.btn-work-action {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  font-size: 1.5rem;
+  font-family: var(--mono-font);
+  cursor: pointer;
+  background: none;
+  padding: 1em;
+  border: 1px solid var(--purple);
+  border-radius: 3px;
+  color: var(--purple);
+}
+
+.btn-work-action svg {
+  margin-right: 0.5em;
+}
+
+.btn-work-action:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.about {
+  height: 80vh;
+  /* background-color: grey; */
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 2.6rem;
+  counter-increment: section-item;
+  gap: 0.5em;
+  margin-bottom: 4rem;
+}
+
+.section-title::before {
+  font-size: 0.8em;
+  font-weight: 400;
+  font-family: var(--mono-font);
+  color: var(--blue);
+  content: "0" counter(section-item) ".";
+}
+
+.section-title::after {
+  content: "";
+  width: 12em;
+  height: 0.08rem;
+  background-color: var(--grey);
+}
