@@ -168,11 +168,21 @@ body {
   margin-bottom: 3rem;
 }
 
+.heading-text {
+  margin-bottom: 4rem;
+}
+
 .default-text {
   font-size: 1.7rem;
   color: var(--grey);
   line-height: 1.5;
-  margin-bottom: 4rem;
+}
+
+.mono-text {
+  font-size: 1.7rem;
+  font-family: var(--mono-font);
+  color: var(--grey);
+  line-height: 1.5;
 }
 
 .hero .default-text {
@@ -399,6 +409,10 @@ body {
   margin-bottom: 3rem;
 }
 
+.hire-content {
+  margin-bottom: 3rem;
+}
+
 .hire-buttons {
   display: flex;
   justify-content: center;
@@ -406,4 +420,37 @@ body {
   padding-top: 1rem;
   margin-bottom: 3rem;
   gap: 1em;
+}
+
+.work {
+  margin-bottom: 12rem;
+}
+
+.project {
+  margin-bottom: 5rem;
+}
+
+.work .section-title {
+  margin-bottom: 5rem;
+}
+
+.work .tag {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.work h2 {
+  margin-bottom: 2rem;
+}
+
+.work .default-text {
+  max-width: 60rem;
+  margin-bottom: 2rem;
+}
+
+.work ul {
+  font-size: 1.3rem;
+  display: flex;
+  list-style: none;
+  gap: 2em;
 }
