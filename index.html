@@ -14,7 +14,9 @@
           <li><a href="#about">About</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#hire">Hire</a></li>
-          <li><a href="#resume">Resumé</a></li>
+          <li>
+            <button class="btn btn-resume" type="button">Resumé</button>
+          </li>
         </ol>
       </div>
       <div class="social">
@@ -65,13 +67,12 @@
           <a href="" title="Email: click to copy">thiagorasouza@gmail.com</a>
         </div>
       </div>
-
       <div class="content">
         <div class="hero">
           <div class="sub-heading">Howdy, I am</div>
           <div class="heading">Thiago Souza,</div>
           <div class="heading-caption">and I solve problems.</div>
-          <p class="intro">
+          <p class="default-text">
             I'm a self-taught
             <span class="blue-text">Fullstack Developer</span>, specializing in
             solving problems using
@@ -82,7 +83,7 @@
             Development.
           </p>
           <div class="work-action">
-            <button type="button" class="btn-work-action">
+            <button type="button" class="btn btn-work-action">
               <svg
                 width="24"
                 height="24"
@@ -91,21 +92,18 @@
                 fill="none"
               >
                 <path
-                  stroke="#a56eff"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M16 17L3 11l13-6 13 6-13 6z"
                 />
                 <path
-                  stroke="#a56eff"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M3 15.5l13 6 13-6"
                 />
                 <path
-                  stroke="#a56eff"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
@@ -118,34 +116,144 @@
         </div>
         <div class="section about">
           <div class="section-title">About Me</div>
-          <p class="intro">
+          <p class="default-text">
             I spent my whole life
             <span class="purple-text">building</span> things and
             <span class="purple-text">solving problems</span>.<br />
-            Here's what I'm proud of:
+            Here's some of what I'm proud of:
           </p>
           <div class="timeline">
             <div class="checkpoint">
-              <div class="checkpoint-date">2011</div>
-              <div class="checkpoint-title">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g>
+              <div class="checkpoint-text left">
+                <div class="checkpoint-date">
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path fill="none" d="M0 0h24v24H0z" />
                     <path
-                      fill="#ffffff"
                       fill-rule="nonzero"
                       d="M12 7a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm0 1.5l1.323 2.68 2.957.43-2.14 2.085.505 2.946L12 17.25l-2.645 1.39.505-2.945-2.14-2.086 2.957-.43L12 10.5zM18 2v3l-1.363 1.138A9.935 9.935 0 0 0 13 5.049L13 2 18 2zm-7-.001v3.05a9.935 9.935 0 0 0-3.636 1.088L6 5V2l5-.001z"
                     />
-                  </g>
-                </svg>
+                  </svg>
+                  2011
+                </div>
+                <div class="checkpoint-title">
+                  <span
+                    >Silver Medalist<br />on Brazilian Physics Olympiad</span
+                  >
+                </div>
+                <div class="checkpoint-description">
+                  <p class="default-text">
+                    An early interest in Physics helped me develop my analytical
+                    thinking during highschool
+                  </p>
+                </div>
               </div>
-              <div class="checkpoint-description"></div>
-              <div class="checkpoint-image"></div>
+              <div class="checkpoint-image right">
+                <img
+                  src="/img/einstein-tongue.webp"
+                  width="64"
+                  alt="Einstein showing up his tongue"
+                />
+              </div>
+            </div>
+            <div class="checkpoint">
+              <div class="checkpoint-image left">
+                <img
+                  src="/img/asa1.jpg"
+                  width="64"
+                  alt="Me giving a talk about rocket motors"
+                />
+              </div>
+              <div class="checkpoint-text right">
+                <div class="checkpoint-date purple">
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m15 14 2.045-1.533C19.469 10.648 20.542 6.98 20 4c-2.981-.542-6.649.531-8.467 2.955L10 9m5 5-3.5 2.5-4-4L10 9m5 5v2.667a4 4 0 0 1-.8 2.4l-.7.933-1-1M10 9H7.333a4 4 0 0 0-2.4.8L4 10.5l1 1M8.5 18 5 19l1.166-3.5m9.334-6a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+                    />
+                  </svg>
+                  2019
+                </div>
+                <div class="checkpoint-title">
+                  <span>Graduated in Mechanical Engineering</span>
+                </div>
+                <div class="checkpoint-description">
+                  <p class="default-text">
+                    Designed university's first rocket and finished my
+                    undergraduate thesis in Vortex Cooled Rocket Engines
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="checkpoint">
+              <div class="checkpoint-text left">
+                <div class="checkpoint-date pink">
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.293,11.293l4-4A1,1,0,1,1,6.707,8.707L3.414,12l3.293,3.293a1,1,0,1,1-1.414,1.414l-4-4A1,1,0,0,1,1.293,11.293Zm17.414-4a1,1,0,1,0-1.414,1.414L20.586,12l-3.293,3.293a1,1,0,1,0,1.414,1.414l4-4a1,1,0,0,0,0-1.414ZM13.039,4.726l-4,14a1,1,0,0,0,.686,1.236A1.053,1.053,0,0,0,10,20a1,1,0,0,0,.961-.726l4-14a1,1,0,1,0-1.922-.548Z"
+                    />
+                  </svg>
+                  2020 - 2023
+                </div>
+                <div class="checkpoint-title">
+                  <span>Turned my hobby into my profession</span>
+                </div>
+                <div class="checkpoint-description">
+                  <p class="default-text">
+                    After programming as a hobby for 13 years, decided to turn
+                    my passion into my profession.
+                  </p>
+                </div>
+              </div>
+              <div class="checkpoint-image right">
+                <img
+                  src="/img/coding.jpg"
+                  width="64"
+                  alt="Einstein showing up his tongue"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section about">
+          <div class="section-title">What I've Built?</div>
+        </div>
+        <div class="hire">
+          <div class="hire-title">03. Hire me</div>
+          <div class="hire-heading">Get In Touch</div>
+          <div class="hire-content">
+            <p class="default-text"></p>
+            <p class="default-text">
+              I'm <span class="pink-text">open</span> for new opportunities.
+              <br />
+              Let's get in touch and see how we can
+              <span class="blue-text">help each other.</span>
+            </p>
+            <div class="hire-buttons">
+              <button class="btn btn-resume" type="button">
+                Download my CV
+              </button>
+              <span class="grey-color">and</span>
+              <button class="btn btn-resume" type="button">
+                Contact me via LinkedIn
+              </button>
             </div>
           </div>
         </div>

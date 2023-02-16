@@ -7,7 +7,7 @@
   --pink: #ff50b9;
   --purple: #a56eff;
   --blue: #2ad3fe;
-  --horizontal-padding: 4rem;
+  --horizontal-padding: 5rem;
   --siders-width: 4rem;
   --mono-font: "Fira Code", sans-serif;
 }
@@ -31,7 +31,7 @@ body {
 
 .page {
   position: relative;
-  padding: var(--horizontal-padding) 5rem;
+  padding: 4rem var(--horizontal-padding);
 }
 
 .navbar {
@@ -43,6 +43,7 @@ body {
 .navbar ol {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 2.5em;
 }
 
@@ -167,12 +168,15 @@ body {
   margin-bottom: 3rem;
 }
 
-.intro {
-  max-width: 60rem;
+.default-text {
   font-size: 1.7rem;
   color: var(--grey);
   line-height: 1.5;
   margin-bottom: 4rem;
+}
+
+.hero .default-text {
+  max-width: 60rem;
 }
 
 .blue-text {
@@ -187,7 +191,11 @@ body {
   color: var(--purple);
 }
 
-.btn-work-action {
+.grey-color {
+  color: var(--grey);
+}
+
+.btn {
   display: flex;
   align-items: center;
   vertical-align: middle;
@@ -196,23 +204,41 @@ body {
   cursor: pointer;
   background: none;
   padding: 1em;
-  border: 1px solid var(--purple);
+  border-width: 1px;
+  border-style: solid;
   border-radius: 3px;
+  border-color: var(--purple);
   color: var(--purple);
 }
 
-.btn-work-action svg {
+.btn svg {
+  stroke: var(--purple);
   margin-right: 0.5em;
+  transition: all 0.2s ease-in-out;
 }
 
-.btn-work-action:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease-in-out;
+.btn:hover {
+  border-color: var(--pink);
+  color: var(--pink);
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover svg {
+  stroke: var(--pink);
+}
+
+.btn-resume {
+  font-size: 1.4rem;
+  padding: 0.5em 1em;
 }
 
 .about {
-  height: 80vh;
-  /* background-color: grey; */
+  margin-bottom: 12rem;
+}
+
+.section {
+  counter-increment: section-item;
 }
 
 .section-title {
@@ -220,9 +246,8 @@ body {
   align-items: center;
   font-weight: 700;
   font-size: 2.6rem;
-  counter-increment: section-item;
   gap: 0.5em;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .section-title::before {
@@ -238,4 +263,147 @@ body {
   width: 12em;
   height: 0.08rem;
   background-color: var(--grey);
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding-top: 6rem;
+}
+
+.timeline::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 6rem;
+  bottom: 7.5rem;
+  left: calc(50% - 0.04rem);
+  width: 0.08rem;
+  background-color: var(--white);
+}
+
+.checkpoint {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.checkpoint-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75em;
+}
+
+.checkpoint-image img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.checkpoint-date,
+.checkpoint-title {
+  font-size: 1.8rem;
+  font-family: var(--mono-font);
+}
+
+.checkpoint-date {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--blue);
+}
+
+.checkpoint-date svg {
+  fill: var(--blue);
+}
+
+.checkpoint-date.pink {
+  color: var(--pink);
+}
+
+.checkpoint-date.pink svg {
+  fill: var(--pink);
+}
+
+.checkpoint-date.purple {
+  color: var(--purple);
+}
+
+.checkpoint-date.purple svg {
+  fill: none;
+  stroke: var(--purple);
+}
+
+.checkpoint-title {
+  font-weight: 600;
+}
+
+.checkpoint-description {
+  width: 85%;
+}
+
+.checkpoint-text.left {
+  align-items: flex-end;
+  text-align: right;
+  padding-right: 1.5rem;
+  margin-right: 6rem;
+}
+
+.checkpoint-text.right {
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 1.5rem;
+  margin-left: 6rem;
+}
+
+.checkpoint-image.right {
+  text-align: left;
+  margin-left: -6rem;
+}
+
+.checkpoint-image.left {
+  text-align: right;
+  margin-right: -6rem;
+}
+
+.hire {
+  text-align: center;
+}
+
+.hire-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-family: var(--mono-font);
+  color: var(--blue);
+  margin-bottom: 3rem;
+}
+
+.hire-title::before,
+.hire-title::after {
+  content: "";
+  width: 100%;
+  max-width: 4em;
+  height: 0.08rem;
+  background-color: var(--grey);
+}
+
+.hire-heading {
+  font-size: 5.6rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.hire-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  margin-bottom: 3rem;
+  gap: 1em;
 }
