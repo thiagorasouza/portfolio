@@ -1,17 +1,14 @@
 {
-  "name": "portfolio",
+  "name": "Thiago Souza's Portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "My personal portfolio",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thiagorasouza/portfolio.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Thiago Souza",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/thiagorasouza/portfolio/issues"
