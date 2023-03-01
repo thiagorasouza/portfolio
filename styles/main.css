@@ -149,7 +149,7 @@ svg {
 .navbar li {
   counter-increment: item;
 }
-.navbar li a::before {
+.navbar li .nav-link::before {
   color: #2ad3fe;
   content: "0" counter(item) ".";
   margin-right: 0.4em;

@@ -248,7 +248,7 @@ svg {
     counter-increment: item;
   }
 
-  li a::before {
+  li .nav-link::before {
     color: $blue;
     content: "0" counter(item) ".";
     margin-right: 0.4em;
