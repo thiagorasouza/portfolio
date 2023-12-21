@@ -9,10 +9,10 @@ $purple: #a56eff;
 $blue: #2ad3fe;
 
 /* Spacing */
-$desktopVerticalPadding: 2rem;
+$desktopVerticalPadding: 3rem;
 $desktopHorizontalPadding: 5rem;
 
-$mobileVerticalPadding: 2rem;
+$mobileVerticalPadding: 3rem;
 $mobileHorizontalPadding: 2rem;
 
 $sidersWidth: 4rem;
@@ -228,7 +228,7 @@ svg {
   left: 0;
   right: 0;
   font-family: $monoFontFamily;
-  padding: $mobileVerticalPadding calc($mobileHorizontalPadding + 0.5rem);
+  padding: $mobileVerticalPadding calc($mobileHorizontalPadding + 1rem);
   background-color: rgba($black, 0.8);
 
   @include for-desktop-up {

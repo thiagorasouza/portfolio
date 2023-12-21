@@ -129,12 +129,12 @@ svg {
   left: 0;
   right: 0;
   font-family: "Fira Code", sans-serif;
-  padding: 2rem 2.5rem;
+  padding: 3rem 3rem;
   background-color: rgba(27, 39, 48, 0.8);
 }
 @media (min-width: 1200px) {
   .navbar {
-    padding: 2rem 6rem;
+    padding: 3rem 6rem;
   }
 }
 .navbar ol {
