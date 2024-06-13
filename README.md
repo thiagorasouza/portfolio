@@ -13,7 +13,7 @@ Made to be simple, responsive and dynamic.
 ## :link: Links
 
 - :earth_africa: Live: <https://thiago-souza.com>
-- :card_file_box: Repo: [@thiagorasouza/netflix-clone](https://github.com/thiagorasouza/portfolio)
+- :card_file_box: Repo: [@thiagorasouza/portfolio](https://github.com/thiagorasouza/portfolio)
 
 ## :computer: Screenshots
 
