@@ -15,6 +15,6 @@
   },
   "homepage": "https://github.com/thiagorasouza/portfolio#readme",
   "devDependencies": {
-    "prettier": "^2.8.4"
+    "prettier": "^2.8.8"
   }
 }
