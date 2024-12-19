@@ -1,0 +1,51 @@
+/* New Color Palette */
+/* Color Palette */
+/* Spacing */
+/* Typography */
+.text-blue {
+  color: #91a8ec;
+}
+
+.text-pink {
+  color: #ff91e8;
+}
+
+.text-purple {
+  color: #a56eff;
+}
+
+.text-grey {
+  color: #52514e;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.bg-green {
+  background-color: #3feb81;
+}
+
+.bg-dark-green {
+  background-color: #21a094;
+}
+
+.bg-pink {
+  background-color: #ff91e8;
+}
+
+.bg-dark-pink {
+  background-color: #ea4c89;
+}
+
+.bg-blue {
+  background-color: #91a8ec;
+}
+
+.bg-yellow {
+  background-color: #f7cb46;
+}/*# sourceMappingURL=utilities.css.map */

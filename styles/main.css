@@ -1,7 +1,57 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@200;300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+/* New Color Palette */
 /* Color Palette */
 /* Spacing */
 /* Typography */
+.text-blue {
+  color: #91a8ec;
+}
+
+.text-pink {
+  color: #ff91e8;
+}
+
+.text-purple {
+  color: #a56eff;
+}
+
+.text-grey {
+  color: #52514e;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.bg-green {
+  background-color: #3feb81;
+}
+
+.bg-dark-green {
+  background-color: #21a094;
+}
+
+.bg-pink {
+  background-color: #ff91e8;
+}
+
+.bg-dark-pink {
+  background-color: #ea4c89;
+}
+
+.bg-blue {
+  background-color: #91a8ec;
+}
+
+.bg-yellow {
+  background-color: #f7cb46;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -21,58 +71,44 @@ html {
 
 body {
   font-size: 1.4rem;
-  background-color: #1b2730;
-  color: #ffffff;
+  background-color: #f9f5f2;
+  color: #1b2730;
 }
 
 a {
+  all: unset;
   cursor: pointer;
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
-}
-a svg {
-  transition: fill 0.3s ease-in-out;
-}
-a:hover {
-  color: #ff50b9;
-}
-a:hover svg {
-  fill: #ff50b9;
 }
 
 svg {
-  fill: #ffffff;
+  fill: #52514e;
+}
+
+.page {
+  overflow: hidden;
+  position: relative;
+  max-width: 160rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+@media (min-width: 1200px) {
+  .page {
+    padding: 0 6rem;
+  }
 }
 
 .text-reading {
   font-family: "Inter", sans-serif;
-  line-height: 1.5;
+  line-height: 1.75;
   font-size: 1.6rem;
-  color: #b8bdc0;
+  color: #52514e;
 }
 
 .text-caption {
   font-size: 1.7rem;
   font-family: "Fira Code", sans-serif;
-  color: #b8bdc0;
+  color: #52514e;
   line-height: 1.5;
-}
-
-.text-blue {
-  color: #2ad3fe;
-}
-
-.text-pink {
-  color: #ff50b9;
-}
-
-.text-purple {
-  color: #a56eff;
-}
-
-.text-grey {
-  color: #b8bdc0;
 }
 
 .btn {
@@ -80,28 +116,21 @@ svg {
   width: max-content;
   display: flex;
   align-items: center;
-  vertical-align: middle;
-  font-size: 1.5rem;
-  font-family: "Fira Code", sans-serif;
-  cursor: pointer;
-  background: none;
-  padding: 1em;
-  border: 1px solid #a56eff;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid #1b2730;
   border-radius: 3px;
-  color: #a56eff;
+  box-shadow: 4px 4px 0 #1b2730, 3px 3px 0 #1b2730, 2px 2px 0 #1b2730, 1px 1px 0 #1b2730;
+  font-size: 1.5rem;
+  cursor: pointer;
   transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 .btn svg {
-  stroke: #a56eff;
+  fill: #1b2730;
+  max-width: 2rem;
+  height: 1.75rem;
+  stroke: #1b2730;
   margin-right: 0.5em;
   transition: stroke 0.2s ease-in-out;
-}
-.btn:hover {
-  border-color: #ff50b9;
-  color: #ff50b9;
-}
-.btn:hover svg {
-  stroke: #ff50b9;
 }
 
 .btn-resume {
@@ -109,55 +138,43 @@ svg {
   padding: 0.5em 1em;
 }
 
-.page {
-  overflow: hidden;
-  position: relative;
-  max-width: 130rem;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-@media (min-width: 1200px) {
-  .page {
-    padding: 0 5rem;
-  }
-}
-
 .navbar {
-  z-index: 10;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  font-family: "Fira Code", sans-serif;
-  padding: 3rem 3rem;
-  background-color: rgba(27, 39, 48, 0.8);
+  display: flex;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  padding: 3rem 2rem;
+  background-color: rgba(249, 245, 242, 0.8);
 }
 @media (min-width: 1200px) {
   .navbar {
-    padding: 3rem 6rem;
+    padding: 3rem 7rem;
   }
 }
-.navbar ol {
+.navbar h2 {
+  font-size: 3.6rem;
+  font-family: "Lexend", sans-serif;
+  font-weight: 800;
+  color: #f7cb46;
+  text-shadow: -1px 0 #1b2730, 0 1px #1b2730, 1px 0 #1b2730, 0 -1px #1b2730, 4px 4px 0 #1b2730, 3px 3px 0 #1b2730, 2px 2px 0 #1b2730, 1px 1px 0 #1b2730;
+}
+.navbar ul {
   width: -moz-max-content;
   width: max-content;
   margin-left: auto;
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 2.5em;
+  gap: 2em;
 }
-.navbar li {
-  counter-increment: item;
-}
-.navbar li .nav-link::before {
-  color: #2ad3fe;
-  content: "0" counter(item) ".";
-  margin-right: 0.4em;
-}
-@media (max-width: 350px) {
-  .navbar li:last-child {
-    display: none;
-  }
+.navbar .navbar-btn {
+  font-family: "Lexend", sans-serif;
+  font-size: 1.4rem;
+  color: #1b2730;
+  padding: 1rem 2rem;
+  border: 1px solid #1b2730;
+  box-shadow: 4px 4px 0 #1b2730, 3px 3px 0 #1b2730, 2px 2px 0 #1b2730, 1px 1px 0 #1b2730;
+  font-weight: 700;
+  border-radius: 2px;
 }
 
 .sider {
@@ -186,7 +203,7 @@ svg {
 }
 @media (min-width: 1200px) {
   .social {
-    left: 5rem;
+    left: 6rem;
   }
 }
 .social ul {
@@ -221,12 +238,12 @@ svg {
 }
 @media (min-width: 1200px) {
   .contact {
-    right: 5rem;
+    right: 6rem;
   }
 }
 .contact .email {
   cursor: pointer;
-  color: #ffffff;
+  color: #282826;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
   transition: transform 0.3s ease-in-out;
@@ -240,10 +257,10 @@ svg {
   transition: fill 0.3s ease-in-out;
 }
 .contact .email:hover {
-  color: #ff50b9;
+  color: #ff6600;
 }
 .contact .email:hover svg {
-  fill: #ff50b9;
+  fill: #f7cb46;
 }
 .contact .email:hover {
   transform: translateY(-0.3rem);
@@ -254,12 +271,12 @@ svg {
 }
 @media (min-width: 600px) {
   .content {
-    padding: 0 6.5rem;
+    padding: 0 2.5rem;
   }
 }
 @media (min-width: 1200px) {
   .content {
-    padding: 0 10rem;
+    padding: 0 8rem;
   }
 }
 @media (max-width: 350px) {
@@ -269,23 +286,25 @@ svg {
 }
 
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 180px);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: "Lexend", sans-serif;
+  color: #282826;
+}
+@media (min-width: 1200px) {
+  .hero {
+    padding-left: 8rem;
+  }
 }
 .hero .hero-sub {
   font-size: 1.8rem;
-  font-family: "Fira Code", sans-serif;
   margin-bottom: 2rem;
-  color: #2ad3fe;
 }
 .hero .hero-heading {
   font-size: clamp(3.65rem, 6vw, 6.4rem);
   font-weight: 700;
-}
-.hero .hero-heading-caption {
-  color: #a56eff;
   margin-bottom: 3rem;
 }
 .hero .hero-text {
@@ -296,16 +315,26 @@ svg {
   fill: none;
 }
 
-#about {
-  min-height: 100vh;
-  opacity: 0;
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 100, 0, 0, 1);
+.window {
+  border: 1px solid #1b2730;
+  border-radius: 5px;
+  background-color: white;
 }
-#about.active {
-  visibility: visible;
-  opacity: 1;
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s, transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+
+.window-controls {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 0.25em;
+  padding: 0.5em;
+  background-color: #e1dfe1;
+  border-bottom: 1px solid #1b2730;
+}
+
+.window-controls-btn {
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
 }
 
 #work {
@@ -355,7 +384,7 @@ svg {
   content: "";
   width: min(100%, 12em);
   height: 0.08rem;
-  background-color: #b8bdc0;
+  background-color: #52514e;
 }
 .section .section-description {
   margin-bottom: 3.5rem;
@@ -364,117 +393,6 @@ svg {
   padding-top: 5rem;
   margin-right: auto;
   margin-left: auto;
-}
-
-.timeline {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 10rem;
-}
-.timeline::before {
-  content: "";
-  z-index: -1;
-  width: 0.08rem;
-  position: absolute;
-  top: 6rem;
-  bottom: 7.5rem;
-  left: calc(50% - 0.04rem);
-  background-color: #ffffff;
-}
-
-.checkpoint {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  padding-bottom: 3rem;
-  text-align: center;
-  background-color: #1b2730;
-}
-@media (min-width: 900px) {
-  .checkpoint {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-.checkpoint .checkpoint-text {
-  display: flex;
-  flex-direction: column;
-  gap: 1.75em;
-}
-.checkpoint .checkpoint-text.right {
-  opacity: 0;
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 50, 0, 0, 1);
-}
-.checkpoint .checkpoint-text.right.active {
-  visibility: visible;
-  opacity: 1;
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s, transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
-}
-.checkpoint .checkpoint-text.left {
-  opacity: 0;
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -50, 0, 0, 1);
-}
-.checkpoint .checkpoint-text.left.active {
-  visibility: visible;
-  opacity: 1;
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s, transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
-}
-.checkpoint .checkpoint-image img {
-  width: 12rem;
-  height: 12rem;
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.checkpoint .checkpoint-date,
-.checkpoint .checkpoint-title {
-  font-size: 1.8rem;
-  font-family: "Fira Code", sans-serif;
-}
-.checkpoint .checkpoint-title {
-  font-weight: 600;
-}
-.checkpoint .checkpoint-date {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5em;
-}
-.checkpoint .checkpoint-description {
-  margin: 0 auto;
-}
-@media (min-width: 900px) {
-  .checkpoint {
-    gap: 0;
-    padding-bottom: 0;
-    background-color: transparent;
-  }
-  .checkpoint .checkpoint-text.left {
-    align-items: flex-end;
-    text-align: right;
-    padding-right: 1.5rem;
-    margin-right: 6rem;
-  }
-  .checkpoint .checkpoint-text.right {
-    align-items: flex-start;
-    text-align: left;
-    padding-left: 1.5rem;
-    margin-left: 6rem;
-  }
-  .checkpoint .checkpoint-image.right {
-    order: 2;
-    text-align: left;
-    margin-left: -6rem;
-  }
-  .checkpoint .checkpoint-image.left {
-    text-align: right;
-    margin-right: -6rem;
-  }
-  .checkpoint .checkpoint-description {
-    margin: 0;
-  }
 }
 
 .projects-grid {
@@ -504,7 +422,6 @@ svg {
   transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s, transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
 }
 .project .project-image {
-  border-radius: 0.5rem;
   overflow: hidden;
 }
 .project .project-image img {
@@ -512,21 +429,15 @@ svg {
   aspect-ratio: 16/9;
   -o-object-fit: cover;
      object-fit: cover;
-  opacity: 30%;
   vertical-align: middle;
   transition: opacity 0.3s ease-in-out;
 }
 .project .project-image img:hover {
-  opacity: 1;
   cursor: pointer;
 }
-.project .project-caption {
-  font-family: "Fira Code", sans-serif;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-}
 .project .project-title {
-  font-size: 2.4rem;
+  font-family: "Lexend", sans-serif;
+  font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 2rem;
 }
@@ -536,7 +447,7 @@ svg {
 .project .project-features {
   font-size: 1.3rem;
   font-family: "Fira Code", sans-serif;
-  color: #b8bdc0;
+  color: #52514e;
   margin-bottom: 2rem;
 }
 .project .project-features ul {
@@ -549,16 +460,14 @@ svg {
 }
 .project .project-links {
   font-size: 1.3rem;
-  font-family: "Fira Code", sans-serif;
+  font-family: "Lexend", sans-serif;
 }
-.project .project-links a {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
+.project .project-links .btn-demo {
+  color: #1b2730;
 }
-.project .project-links svg {
-  width: 2rem;
-  height: 2rem;
+.project .project-links .btn-code {
+  color: #1b2730;
+  background-color: #b8bdc0;
 }
 .project .project-links ul {
   display: flex;
@@ -567,8 +476,8 @@ svg {
 }
 @media (min-width: 900px) {
   .project {
-    -moz-column-gap: 3rem;
-         column-gap: 3rem;
+    -moz-column-gap: 6rem;
+         column-gap: 6rem;
     row-gap: 5rem;
   }
   .project .left {
@@ -593,25 +502,10 @@ svg {
   justify-content: center;
   text-align: center;
 }
-.hire .hire-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-  font-size: 1.8rem;
-  font-weight: 400;
-  font-family: "Fira Code", sans-serif;
-  color: #2ad3fe;
-  margin-bottom: 3rem;
-}
-.hire .hire-title::before, .hire .hire-title::after {
-  content: "";
-  width: 100%;
-  max-width: 4em;
-  height: 0.08rem;
-  background-color: #b8bdc0;
-}
 .hire .hire-heading {
+  font-family: "Lexend", sans-serif;
+  letter-spacing: -4px;
+  text-transform: uppercase;
   font-size: clamp(3.2rem, 6vw, 5.6rem);
   font-weight: 700;
   margin-bottom: 3rem;
@@ -636,11 +530,10 @@ svg {
 .footer {
   font-size: 1.3rem;
   font-family: "Fira Code", sans-serif;
-  color: #b8bdc0;
-  margin-bottom: 3rem;
+  color: #52514e;
   text-align: center;
   line-height: 1.75;
 }
 .footer a {
-  color: #b8bdc0;
+  color: #52514e;
 }/*# sourceMappingURL=main.css.map */

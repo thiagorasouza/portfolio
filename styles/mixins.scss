@@ -1,0 +1,97 @@
+@use "variables" as *;
+
+@mixin for-phone-only {
+  @media (max-width: 599.999999px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin translate-up-effect {
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-0.3rem);
+  }
+}
+
+@mixin link-styles {
+  cursor: pointer;
+  color: $headerTextColor;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+
+  svg {
+    transition: fill 0.3s ease-in-out;
+  }
+
+  &:hover {
+    color: $habboOrange;
+
+    svg {
+      fill: $actionColor;
+    }
+  }
+}
+
+@mixin responsive-grid-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin responsive-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include for-tablet-landscape-up {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@mixin fade-in-effect($x: 0, $y: 0, $z: 0, $scale: 1) {
+  opacity: 0;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, $x, $y, $z, $scale);
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s,
+      transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+  }
+}
+
+@mixin text-shadow-effect($textColor, $shadowColor) {
+  color: $textColor;
+  text-shadow: -1px 0 $shadowColor, 0 1px $shadowColor, 1px 0 $shadowColor,
+    0 -1px $shadowColor, 4px 4px 0 $shadowColor, 3px 3px 0 $shadowColor,
+    2px 2px 0 $shadowColor, 1px 1px 0 $shadowColor;
+}
+
+@mixin page-section {
+  min-height: 100vh;
+}

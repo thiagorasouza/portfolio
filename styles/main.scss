@@ -1,117 +1,9 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "utilities";
+
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@200;300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
-
-/* Color Palette */
-$black: #1b2730;
-$white: #ffffff;
-$grey: #b8bdc0;
-$pink: #ff50b9;
-$purple: #a56eff;
-$blue: #2ad3fe;
-
-/* Spacing */
-$desktopVerticalPadding: 3rem;
-$desktopHorizontalPadding: 5rem;
-
-$mobileVerticalPadding: 3rem;
-$mobileHorizontalPadding: 2rem;
-
-$sidersWidth: 4rem;
-
-$sectionSpacing: 12rem;
-
-/* Typography */
-$sansFontFamily: "Inter", sans-serif;
-$defaultFontSize: 1.4rem;
-$monoFontFamily: "Fira Code", sans-serif;
-
-@mixin for-phone-only {
-  @media (max-width: 599.999999px) {
-    @content;
-  }
-}
-
-@mixin for-tablet-portrait-up {
-  @media (min-width: 600px) {
-    @content;
-  }
-}
-
-@mixin for-tablet-landscape-up {
-  @media (min-width: 900px) {
-    @content;
-  }
-}
-
-@mixin for-desktop-up {
-  @media (min-width: 1200px) {
-    @content;
-  }
-}
-
-@mixin for-big-desktop-up {
-  @media (min-width: 1800px) {
-    @content;
-  }
-}
-
-@mixin translate-up-effect {
-  transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: translateY(-0.3rem);
-  }
-}
-
-@mixin pink-link-styles {
-  cursor: pointer;
-  color: $white;
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
-
-  svg {
-    transition: fill 0.3s ease-in-out;
-  }
-
-  &:hover {
-    color: $pink;
-
-    svg {
-      fill: $pink;
-    }
-  }
-}
-
-@mixin responsive-grid-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-@mixin responsive-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-
-  @include for-tablet-landscape-up {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@mixin fade-in-effect($x: 0, $y: 0, $z: 0, $scale: 1) {
-  opacity: 0;
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, $x, $y, $z, $scale);
-
-  &.active {
-    visibility: visible;
-    opacity: 1;
-    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s,
-      transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
-  }
-}
-
-@mixin page-section {
-  min-height: 100vh;
-}
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
 
 * {
   margin: 0;
@@ -131,88 +23,23 @@ html {
 
 body {
   font-size: $defaultFontSize;
-  background-color: $black;
-  color: $white;
+  background-color: $backgroundColor;
+  color: $black;
 }
 
 a {
-  @include pink-link-styles;
+  all: unset;
+  cursor: pointer;
 }
 
 svg {
-  fill: $white;
-}
-
-.text-reading {
-  font-family: $sansFontFamily;
-  line-height: 1.5;
-  font-size: 1.6rem;
-  color: $grey;
-}
-
-.text-caption {
-  font-size: 1.7rem;
-  font-family: $monoFontFamily;
-  color: $grey;
-  line-height: 1.5;
-}
-
-.text-blue {
-  color: $blue;
-}
-
-.text-pink {
-  color: $pink;
-}
-
-.text-purple {
-  color: $purple;
-}
-
-.text-grey {
-  color: $grey;
-}
-
-.btn {
-  width: max-content;
-  display: flex;
-  align-items: center;
-  vertical-align: middle;
-  font-size: 1.5rem;
-  font-family: $monoFontFamily;
-  cursor: pointer;
-  background: none;
-  padding: 1em;
-  border: 1px solid $purple;
-  border-radius: 3px;
-  color: $purple;
-  transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
-
-  svg {
-    stroke: $purple;
-    margin-right: 0.5em;
-    transition: stroke 0.2s ease-in-out;
-  }
-
-  &:hover {
-    border-color: $pink;
-    color: $pink;
-
-    svg {
-      stroke: $pink;
-    }
-  }
-}
-
-.btn-resume {
-  font-size: 1.4rem;
-  padding: 0.5em 1em;
+  fill: $bodyTextColor;
 }
 
 .page {
   overflow: hidden;
   position: relative;
-  max-width: 130rem;
+  max-width: 160rem;
   margin: 0 auto;
   padding: 0 $mobileHorizontalPadding;
 
@@ -221,43 +48,88 @@ svg {
   }
 }
 
-.navbar {
-  z-index: 10;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+.text-reading {
+  font-family: $sansFontFamily;
+  line-height: 1.75;
+  font-size: 1.6rem;
+  color: $bodyTextColor;
+}
+
+.text-caption {
+  font-size: 1.7rem;
   font-family: $monoFontFamily;
-  padding: $mobileVerticalPadding calc($mobileHorizontalPadding + 1rem);
-  background-color: rgba($black, 0.8);
+  color: $bodyTextColor;
+  line-height: 1.5;
+}
+
+.btn {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1.75rem;
+
+  border: 1px solid $black;
+  border-radius: 3px;
+  box-shadow: 4px 4px 0 $black, 3px 3px 0 $black, 2px 2px 0 $black,
+    1px 1px 0 $black;
+
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+  svg {
+    fill: $black;
+    max-width: 2rem;
+    height: 1.75rem;
+    stroke: $black;
+    margin-right: 0.5em;
+    transition: stroke 0.2s ease-in-out;
+  }
+}
+
+.btn-resume {
+  font-size: 1.4rem;
+  padding: 0.5em 1em;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  font-family: $sansFontFamily;
+  padding: $mobileVerticalPadding calc($mobileHorizontalPadding);
+  background-color: rgba($backgroundColor, 0.8);
 
   @include for-desktop-up {
     padding: $desktopVerticalPadding calc($desktopHorizontalPadding + 1rem);
   }
 
-  ol {
+  h2 {
+    font-size: 3.6rem;
+    font-family: $lexendFontFamily;
+    font-weight: 800;
+    @include text-shadow-effect($actionColor, $black);
+  }
+
+  ul {
     width: max-content;
     margin-left: auto;
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 2.5em;
+    gap: 2em;
   }
 
-  li {
-    counter-increment: item;
-  }
-
-  li .nav-link::before {
-    color: $blue;
-    content: "0" counter(item) ".";
-    margin-right: 0.4em;
-  }
-
-  @media (max-width: 350px) {
-    li:last-child {
-      display: none;
-    }
+  .navbar-btn {
+    font-family: $lexendFontFamily;
+    font-size: 1.4rem;
+    color: $black;
+    padding: 1rem 2rem;
+    border: 1px solid $black;
+    box-shadow: 4px 4px 0 $black, 3px 3px 0 $black, 2px 2px 0 $black,
+      1px 1px 0 $black;
+    font-weight: 700;
+    border-radius: 2px;
   }
 }
 
@@ -325,7 +197,7 @@ svg {
   }
 
   .email {
-    @include pink-link-styles;
+    @include link-styles;
     @include translate-up-effect;
 
     font-family: $monoFontFamily;
@@ -340,11 +212,11 @@ svg {
   padding: 0 calc($mobileHorizontalPadding + 0.5rem);
 
   @include for-tablet-portrait-up {
-    padding: 0 calc($mobileHorizontalPadding + $sidersWidth + 0.5rem);
+    padding: 0 calc($mobileHorizontalPadding + 0.5rem);
   }
 
   @include for-desktop-up {
-    padding: 0 calc($desktopHorizontalPadding + $sidersWidth + 1rem);
+    padding: 0 calc($desktopHorizontalPadding + 2rem);
   }
 
   @media (max-width: 350px) {
@@ -353,26 +225,26 @@ svg {
 }
 
 .hero {
-  @include page-section;
+  min-height: calc(100vh - 180px);
+  @include for-desktop-up {
+    padding-left: 8rem;
+  }
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
+  font-family: $lexendFontFamily;
+  color: $headerTextColor;
+
   .hero-sub {
     font-size: 1.8rem;
-    font-family: $monoFontFamily;
     margin-bottom: 2rem;
-    color: $blue;
   }
 
   .hero-heading {
     font-size: clamp(3.65rem, 6vw, 6.4rem);
     font-weight: 700;
-  }
-
-  .hero-heading-caption {
-    color: $purple;
     margin-bottom: 3rem;
   }
 
@@ -386,9 +258,27 @@ svg {
   }
 }
 
-#about {
-  @include page-section();
-  @include fade-in-effect($x: 100);
+.window {
+  border: 1px solid $black;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.window-controls {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 0.25em;
+
+  padding: 0.5em;
+  background-color: #e1dfe1;
+  border-bottom: 1px solid $black;
+}
+
+.window-controls-btn {
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
 }
 
 #work {
@@ -426,7 +316,7 @@ svg {
       content: "";
       width: min(100%, 12em);
       height: 0.08rem;
-      background-color: $grey;
+      background-color: $bodyTextColor;
     }
   }
 
@@ -441,110 +331,8 @@ svg {
   }
 }
 
-.timeline {
-  @include responsive-grid-container;
-  gap: 10rem;
-
-  &::before {
-    content: "";
-    z-index: -1;
-    width: 0.08rem;
-    position: absolute;
-    top: 6rem;
-    bottom: 7.5rem;
-    left: calc(50% - 0.04rem);
-    background-color: $white;
-  }
-}
-
-.checkpoint {
-  @include responsive-grid;
-  gap: 1rem;
-  padding-bottom: 3rem;
-  text-align: center;
-  background-color: $black;
-
-  .checkpoint-text {
-    display: flex;
-    flex-direction: column;
-    gap: 1.75em;
-
-    &.right {
-      @include fade-in-effect($x: 50);
-    }
-
-    &.left {
-      @include fade-in-effect($x: -50);
-    }
-  }
-
-  .checkpoint-image img {
-    width: 12rem;
-    height: 12rem;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .checkpoint-date,
-  .checkpoint-title {
-    font-size: 1.8rem;
-    font-family: $monoFontFamily;
-  }
-
-  .checkpoint-title {
-    font-weight: 600;
-  }
-
-  .checkpoint-date {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5em;
-  }
-
-  .checkpoint-description {
-    margin: 0 auto;
-  }
-
-  @include for-tablet-landscape-up {
-    gap: 0;
-    padding-bottom: 0;
-    background-color: transparent;
-
-    .checkpoint-text.left {
-      align-items: flex-end;
-      text-align: right;
-      padding-right: 1.5rem;
-      margin-right: 6rem;
-    }
-
-    .checkpoint-text.right {
-      align-items: flex-start;
-      text-align: left;
-      padding-left: 1.5rem;
-      margin-left: 6rem;
-    }
-
-    .checkpoint-image.right {
-      order: 2;
-      text-align: left;
-      margin-left: -6rem;
-    }
-
-    .checkpoint-image.left {
-      text-align: right;
-      margin-right: -6rem;
-    }
-
-    .checkpoint-description {
-      margin: 0;
-    }
-  }
-}
-
 .projects-grid {
   @include responsive-grid-container;
-
   gap: 10rem;
 }
 
@@ -555,32 +343,24 @@ svg {
   gap: 4rem;
 
   .project-image {
-    border-radius: 0.5rem;
     overflow: hidden;
 
     img {
       max-width: 100%;
       aspect-ratio: 16 / 9;
       object-fit: cover;
-      opacity: 30%;
       vertical-align: middle;
       transition: opacity 0.3s ease-in-out;
 
       &:hover {
-        opacity: 1;
         cursor: pointer;
       }
     }
   }
 
-  .project-caption {
-    font-family: $monoFontFamily;
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-  }
-
   .project-title {
-    font-size: 2.4rem;
+    font-family: $lexendFontFamily;
+    font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 2rem;
   }
@@ -592,7 +372,7 @@ svg {
   .project-features {
     font-size: 1.3rem;
     font-family: $monoFontFamily;
-    color: $grey;
+    color: $bodyTextColor;
     margin-bottom: 2rem;
 
     ul {
@@ -606,17 +386,15 @@ svg {
 
   .project-links {
     font-size: 1.3rem;
-    font-family: $monoFontFamily;
+    font-family: $lexendFontFamily;
 
-    a {
-      display: flex;
-      align-items: center;
-      gap: 0.5em;
+    .btn-demo {
+      color: $black;
     }
 
-    svg {
-      width: 2rem;
-      height: 2rem;
+    .btn-code {
+      color: $black;
+      background-color: $grey;
     }
 
     ul {
@@ -627,7 +405,7 @@ svg {
   }
 
   @include for-tablet-landscape-up {
-    column-gap: 3rem;
+    column-gap: 6rem;
     row-gap: 5rem;
 
     .left {
@@ -656,28 +434,12 @@ svg {
   justify-content: center;
   text-align: center;
 
-  .hire-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-    font-size: 1.8rem;
-    font-weight: 400;
-    font-family: $monoFontFamily;
-    color: $blue;
-    margin-bottom: 3rem;
-
-    &::before,
-    &::after {
-      content: "";
-      width: 100%;
-      max-width: 4em;
-      height: 0.08rem;
-      background-color: $grey;
-    }
-  }
-
   .hire-heading {
+    // @include text-shadow-effect($yellow, $black);
+
+    font-family: $lexendFontFamily;
+    letter-spacing: -4px;
+    text-transform: uppercase;
     font-size: clamp(3.2rem, 6vw, 5.6rem);
     font-weight: 700;
     margin-bottom: 3rem;
@@ -704,12 +466,11 @@ svg {
 .footer {
   font-size: 1.3rem;
   font-family: $monoFontFamily;
-  color: $grey;
-  margin-bottom: 3rem;
+  color: $bodyTextColor;
   text-align: center;
   line-height: 1.75;
 
   a {
-    color: $grey;
+    color: $bodyTextColor;
   }
 }

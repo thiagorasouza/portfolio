@@ -1,0 +1,49 @@
+@use "variables" as *;
+
+.text-blue {
+  color: $lightBlue;
+}
+
+.text-pink {
+  color: $lightPink;
+}
+
+.text-purple {
+  color: $purple;
+}
+
+.text-grey {
+  color: $bodyTextColor;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.bg-green {
+  background-color: $lightGreen;
+}
+
+.bg-dark-green {
+  background-color: $darkGreen;
+}
+
+.bg-pink {
+  background-color: $lightPink;
+}
+
+.bg-dark-pink {
+  background-color: $darkPink;
+}
+
+.bg-blue {
+  background-color: $lightBlue;
+}
+
+.bg-yellow {
+  background-color: $yellow;
+}
