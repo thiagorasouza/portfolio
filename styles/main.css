@@ -52,6 +52,12 @@
   background-color: #f7cb46;
 }
 
+@media (max-width: 599.999999px) {
+  .hide-phone-only {
+    display: none;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -158,8 +164,6 @@ svg {
   text-shadow: -1px 0 #1b2730, 0 1px #1b2730, 1px 0 #1b2730, 0 -1px #1b2730, 4px 4px 0 #1b2730, 3px 3px 0 #1b2730, 2px 2px 0 #1b2730, 1px 1px 0 #1b2730;
 }
 .navbar ul {
-  width: -moz-max-content;
-  width: max-content;
   margin-left: auto;
   list-style: none;
   display: flex;

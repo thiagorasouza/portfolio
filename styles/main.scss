@@ -112,7 +112,7 @@ svg {
   }
 
   ul {
-    width: max-content;
+    // width: max-content;
     margin-left: auto;
     list-style: none;
     display: flex;
@@ -131,6 +131,15 @@ svg {
     font-weight: 700;
     border-radius: 2px;
   }
+
+  // @include for-phone-only() {
+  //   ul {
+  //     gap: 1em;
+  //   }
+  //   .navbar-btn {
+  //     padding: 0.5rem 1rem;
+  //   }
+  // }
 }
 
 .sider {

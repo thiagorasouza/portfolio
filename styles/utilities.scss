@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "mixins" as *;
 
 .text-blue {
   color: $lightBlue;
@@ -46,4 +47,10 @@
 
 .bg-yellow {
   background-color: $yellow;
+}
+
+.hide-phone-only {
+  @include for-phone-only {
+    display: none;
+  }
 }

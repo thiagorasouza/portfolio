@@ -48,4 +48,10 @@
 
 .bg-yellow {
   background-color: #f7cb46;
+}
+
+@media (max-width: 599.999999px) {
+  .hide-phone-only {
+    display: none;
+  }
 }/*# sourceMappingURL=utilities.css.map */
